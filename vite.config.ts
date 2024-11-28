@@ -1,18 +1,25 @@
 import { defineConfig } from "vite";
+import { resolve } from "path";
 import vue from "@vitejs/plugin-vue";
 
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
   build: {
     lib: {
-      entry: "./src/main.ts", // The entry file for your library
-      name: "HarmonyUI",       // Global variable name for UMD builds
-      fileName: (format) => `harmonyui.${format}.js`, // Output filenames
+      // src/indext.ts is where we have exported the component(s)
+      entry: resolve(__dirname, "src/components/index.ts"),
+      name: "BrianComponentLibrary",
+      // the name of the output files when the build is run
+      fileName: "harmonyui",
     },
     rollupOptions: {
-      // Ensure Vue is treated as an external dependency
+      // make sure to externalize deps that shouldn't be bundled
+      // into your library
       external: ["vue"],
       output: {
+        // Provide global variables to use in the UMD build
+        // for externalized deps
         globals: {
           vue: "Vue",
         },
