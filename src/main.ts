@@ -3,7 +3,7 @@ import './style.css'
 import App from './App.vue'
 
 
-import { Button, Card } from "./components";
+import { Button, Card } from "./components/index";
 
 export { Button, Card };
 
