@@ -9,7 +9,7 @@ export default defineConfig({
     lib: {
       // src/indext.ts is where we have exported the component(s)
       entry: resolve(__dirname, "src/components/index.ts"),
-      name: "BrianComponentLibrary",
+      name: "harmonyui",
       // the name of the output files when the build is run
       fileName: "harmonyui",
     },
