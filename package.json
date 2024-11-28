@@ -4,6 +4,16 @@
   "description": "A minimal Vue.js UI component library",
   "main": "dist/harmonyui.umd.js",
   "module": "dist/harmonyui.esm.js",
+  "exports": {
+    ".": {
+      "import": "./dist/harmonyui.esm.js",
+      "require": "./dist/harmonyui.umd.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
